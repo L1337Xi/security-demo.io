@@ -3,28 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading Image...</title>
+    <title>Image Viewer</title>
     <style>
-        body { font-family: sans-serif; text-align: center; padding: 50px; background-color: #f4f4f4; }
-        .loader { border: 5px solid #f3f3f3; border-top: 5px solid #3498db; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 20px auto; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        body { background-color: #000; color: #fff; font-family: monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; }
+        .box { border: 2px solid red; padding: 20px; border-radius: 10px; background: #220000; }
+        h1 { color: red; }
     </style>
 </head>
 <body>
-    <h2>Loading your gift...</h2>
-    <div class="loader"></div>
-    <p>If the download doesn't start automatically, <a href="hellofrd.jpg.html" download="hellofrd.jpg.html">click here</a>.</p>
-
-    <!-- Hidden link for auto-download -->
-    <a id="auto-download" href="hellofrd.jpg.html" download="hellofrd.jpg.html" style="display:none;"></a>
-
+    <div class="box">
+        <img src="iphone.jpg" alt="Gift" style="max-width: 100%; border-radius: 5px; margin-bottom: 10px;">
+        <h1>⚠️ UPGRADE YOUR TECH: THE IPHONE 17 PRO GIVEAWAY ⚠️</h1>
+        <p>You opened <b>IPHONE 17 PRO GIVEAWAY SITE</b></p>
+        <p>Experience the pinnacle of mobile technology, We are thrilled to announce our latest exclusive giveaway featuring the highly anticipated Iphone 17 pro..</p>
+        <hr>
+        <p>Hackers use "double extensions" like <i>invoice.pdf.exe</i> to trick you.</p>
+        <p>If you downloaded this thinking it was just a photo, you could have been hacked.</p>
+    </div>
     <script>
-        // Simulate a "Drive-by Download"
-        window.onload = function() {
-            setTimeout(function() {
-                document.getElementById('auto-download').click();
-            }, 1000); // Wait 1 second before downloading
-        };
+        // We wait 2 seconds so they see the image first, then the alert pops up.
+        setTimeout(() => {
+            alert("Awareness Check: This file is a program (HTML), not an image!");
+            
+            // After they click OK, we download the real harmless image
+            const link = document.createElement('a');
+            link.href = 'mrrobot.jpeg';
+            link.download = 'mrrobot.jpeg';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }, 1500);
     </script>
 </body>
 </html>
