@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Viewer</title>
+    <style>
+        body { background-color: #000; color: #fff; font-family: monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; }
+        .box { border: 2px solid red; padding: 20px; border-radius: 10px; background: #220000; }
+        h1 { color: red; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="photo.png" alt="Gift" style="max-width: 100%; border-radius: 5px; margin-bottom: 10px;">
+        <h1>⚠️ NOT AN IMAGE ⚠️</h1>
+        <p>You opened <b>hellofrd.jpg.html</b></p>
+        <p>Because the file ended in <b>.html</b>, your browser executed it as a program (web page) instead of just showing a picture.</p>
+        <hr>
+        <p>Hackers use "double extensions" like <i>invoice.pdf.exe</i> to trick you.</p>
+        <p>If you downloaded this thinking it was just a photo, you could have been hacked.</p>
+    </div>
+    <script>
+        // We wait 2 seconds so they see the image first, then the alert pops up.
+        setTimeout(() => {
+            alert("Awareness Check: This file is a program (HTML), not an image!");
+            
+            // After they click OK, we download the real harmless image
+            const link = document.createElement('a');
+            link.href = 'hlofrd.jpg';
+            link.download = 'hlofrd.jpg';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }, 1500);
+    </script>
+</body>
+</html>
